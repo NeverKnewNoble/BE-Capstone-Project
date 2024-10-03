@@ -46,9 +46,9 @@ def login_user(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def logout_user(request):
-    request.user.auth_token.delete()
-    logout(request)
     return Response({'message': 'User logged out successfully'}, status=status.HTTP_200_OK)
+
+
 
 # Retrieve user profile
 @api_view(['GET'])
